@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <title>Document</title>
+</head>
+<body>
+
+        <header>
+            <% include ../partials/header %>
+        </header>
+ <main>
+
+
+    <div class= class=  "container" class="form-horizontal col-sm-4 col-sm-offset-4">
+           <% fejlbeskeder.forEach(enFejlbesked => { %>
+            <li>
+             <%= enFejlbesked %>   
+            </li>
+            <% }) %>
+                      
+        <div class= "form-area">  
+            <form method="POST" action="/kontaktinfo">
+            <br style="clear:both">
+                        <h3 id="kontakt-form" style="margin-bottom: 25px; text-align: center;">Kontakt Form</h3>
+                <div class="form-group ">
+                <input type="text" class="form-control" id="navn" name="navn" placeholder="Navn" value="<%= navn %>" requiredx>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= email %>" requiredx>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="mobil" name="mobil" placeholder="Mobil Nummer" value="<%= mobil %>" requiredx>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="titel" name="titel" placeholder="Titel" value="<%= titel %>" requiredx>
+              </div>
+                        <div class="form-group">
+                        <textarea class="form-control" type="textarea" id="besked" name="besked" placeholder="Besked" maxlength="500" data-min-rows="7"><%= besked %></textarea>
+                            <span class="help-block"><h1 id="characterLeft" class="help-block "></h1></span>                    
+                        </div>
+                <button id="knap" class="btn btn-danger pull-right">Send</button>
+            </form>
+        </div>
+  
+    
+     </div></div><!-- container -->
+
+</main> 
+
+
+<footer>
+		<% include ../partials/footer %>
+    </footer>
+    
+    <script src="index.js"></script>
+    <script src="admin.js"></script>
+    <script src="login.js"></script>
+    <script src="kontakt.js"></script>
+
+
+</body>
+</html>
